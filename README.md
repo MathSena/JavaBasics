@@ -137,3 +137,37 @@ words.forEach(System.out::println);
 Neste exemplo, a method reference System.out::println atua como uma forma abreviada da expressão lambda que imprime cada palavra na lista.
 
 As method references oferecem uma maneira elegante e concisa de lidar com expressões lambda, tornando o código Java mais limpo e compreensível.
+
+
+## 🌊 Streams no Java 8
+A API de Streams, introduzida no Java 8, é uma atualização significativa na linguagem Java, permitindo processamento sequencial e paralelo de dados com expressividade. A API de Streams foi desenvolvida para trazer um novo paradigma de programação funcional para Java, tornando o processamento de dados mais intuitivo e menos verboso.
+
+### 🌟 Vantagens dos Streams:
+1. 🔥 Expressividade: A API de Streams fornece uma linguagem clara e fluente para expressar operações complexas de processamento de dados.
+2. 💡 Performance: Com a possibilidade de paralelização, as operações de Streams podem ser otimizadas para uso eficiente de múltiplos núcleos da CPU.
+3. 🚀 Flexibilidade: O encadeamento de operações permite a composição de transformações de dados complexas de forma legível.
+
+### Operações com Streams:
+Os Streams oferecem duas categorias principais de operações:
+
+1. Operações Intermediárias (Intermediate): Transformam um Stream em outro Stream, como filter, map e sorted. Elas são chamadas operações "lazily evaluated", ou seja, são avaliadas apenas quando necessárias.
+2. Operações Terminais (Terminal): Produzem um resultado ou um efeito colateral, como collect, forEach, reduce e sum.
+
+### 📝 Exemplo Básico:
+
+Vamos ver um exemplo básico de como usar Streams para filtrar e transformar uma lista:
+
+```java
+List<String> fruits = Arrays.asList("apple", "banana", "cherry", "date");
+
+List<String> filteredFruits = fruits.stream()          // Convertendo a lista em Stream
+.filter(fruit -> !fruit.equals("banana")) // Filtrando bananas
+.map(String::toUpperCase)                 // Convertendo para maiúsculas
+.collect(Collectors.toList());            // Coletando em uma nova lista
+
+System.out.println(filteredFruits); // [APPLE, CHERRY, DATE]
+```
+
+No exemplo acima, primeiro convertemos a lista em um Stream. Em seguida, usamos filter para excluir "banana" e map para transformar cada string em maiúsculas. Finalmente, coletamos os resultados em uma nova lista.
+
+A API de Streams trouxe uma revolução no estilo de programação em Java, movendo-se em direção a um estilo mais funcional. Essa abordagem não apenas torna o código mais conciso e legível, mas também oferece poderosas ferramentas para processamento de dados e manipulação de coleções. Integrado com outros recursos do Java 8, como funções Lambda e Method References, a programação com Streams é uma habilidade essencial para qualquer desenvolvedor Java moderno.
