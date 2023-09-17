@@ -171,3 +171,44 @@ System.out.println(filteredFruits); // [APPLE, CHERRY, DATE]
 No exemplo acima, primeiro convertemos a lista em um Stream. Em seguida, usamos filter para excluir "banana" e map para transformar cada string em maiúsculas. Finalmente, coletamos os resultados em uma nova lista.
 
 A API de Streams trouxe uma revolução no estilo de programação em Java, movendo-se em direção a um estilo mais funcional. Essa abordagem não apenas torna o código mais conciso e legível, mas também oferece poderosas ferramentas para processamento de dados e manipulação de coleções. Integrado com outros recursos do Java 8, como funções Lambda e Method References, a programação com Streams é uma habilidade essencial para qualquer desenvolvedor Java moderno.
+
+## 📅 Datas no Java 8
+Com a introdução do Java 8, uma nova API de datas e horas foi introduzida para resolver os problemas e deficiências do antigo java.util.Date e java.util.Calendar. Essa nova API, localizada no pacote java.time, foi desenvolvida com base na biblioteca Joda-Time e trouxe consigo uma série de melhorias, tornando o trabalho com datas e horas mais intuitivo e eficiente.
+
+### 🌟 Vantagens da nova API de Datas:
+1. 🔥 Imutabilidade: Todas as classes principais da nova API são imutáveis, o que as torna seguras para uso em aplicações multithreaded.
+2. 💡 Fluência e Clareza: Os métodos são projetados para serem encadeados, tornando o código mais legível.
+3. 🚀 Separção de Concerns: A nova API distingue claramente entre datas, horas, fusos horários, períodos e durações.
+4. 🔒 Tratamento de Fuso Horário: Melhor suporte para fusos horários e ajustes relacionados a eles.
+
+### 📚 Classes Principais:
+
+1. LocalDate: Representa uma data sem hora e fuso horário.
+2. LocalTime: Representa uma hora sem data e fuso horário.
+3. LocalDateTime: Representa uma data e hora sem fuso horário.
+4. ZonedDateTime: Representa uma data e hora com fuso horário.
+5. Period: Representa uma quantidade de tempo em termos de anos, meses e dias.
+6. Duration: Representa uma quantidade de tempo em termos de segundos e nanossegundos.
+
+### 📝 Exemplo Básico:
+
+```java
+LocalDate hoje = LocalDate.now();
+System.out.println("Data de hoje: " + hoje);
+
+LocalTime agora = LocalTime.now();
+System.out.println("Hora atual: " + agora);
+
+LocalDateTime dataHoraAtual = LocalDateTime.now();
+System.out.println("Data e hora atual: " + dataHoraAtual);
+
+ZonedDateTime dataHoraZona = ZonedDateTime.now();
+System.out.println("Data, hora e fuso horário atual: " + dataHoraZona);
+
+Period periodo = Period.between(hoje, LocalDate.of(2025, 1, 1));
+System.out.println("Período entre hoje e 01/01/2025: " + periodo.getYears() + " anos");
+
+Duration duracao = Duration.between(agora, LocalTime.MIDNIGHT);
+System.out.println("Duração até meia-noite: " + duracao.getSeconds() + " segundos");
+```
+A nova API de datas do Java 8 torna as operações relacionadas a datas e horas mais previsíveis e intuitivas. Além disso, com a ênfase em imutabilidade e clareza, os desenvolvedores podem escrever código mais seguro e compreensível quando lidam com datas e horas. É altamente recomendável que os desenvolvedores usem esta nova API em vez das antigas classes Date e Calendar para novos desenvolvimentos.
