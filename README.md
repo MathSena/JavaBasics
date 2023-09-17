@@ -97,3 +97,43 @@ words.sort((s1, s2) -> Integer.compare(s1.length(), s2.length()));
 No exemplo acima, a função lambda (s1, s2) -> Integer.compare(s1.length(), s2.length()) substitui o uso de uma classe anônima, tornando o código mais legível e conciso.
 
 As funções lambda, combinadas com os novos recursos da API de Streams do Java 8, proporcionam uma programação mais declarativa, permitindo aos desenvolvedores escrever código mais limpo e expressivo.
+
+## 🔗 Method References no Java 8
+Method References (Referências de Métodos) são uma das funcionalidades introduzidas no Java 8. Eles atuam como um tipo especial de expressão lambda, e permitem que você faça referência diretamente aos métodos ou construtores de uma classe, sem executá-los. Essencialmente, uma method reference é uma abreviação de uma expressão lambda que apenas chama um método específico.
+
+### 🌟 Vantagens das Method References:
+
+1. 🔥 Sintaxe Concisa: Proporciona uma forma ainda mais curta e legível de representar uma função lambda que chama um único método.
+2. 💡 Clareza: Torna o código mais claro e compreensível, especialmente quando o nome do método é autoexplicativo.
+3. 🚀 Reutilização: Permite reutilizar métodos existentes como expressões lambda.
+
+### Referências a métodos estáticos: Usado para referenciar métodos estáticos em classes.
+1. Referências a métodos estáticos: Usado para referenciar métodos estáticos em classes.
+Exemplo: Integer::parseInt é equivalente a (x) -> Integer.parseInt(x)
+
+2. Referências a métodos de instância de um objeto particular: Usado para referenciar um método em um objeto específico.
+Exemplo: System.out::println é equivalente a x -> System.out.println(x)
+
+3. Referências a métodos de instância de um tipo de objeto arbitrário: Usado para referenciar um método em um objeto de um tipo particular.
+Exemplo: String::toLowerCase é equivalente a (s) -> s.toLowerCase()
+
+4. Referências a construtores: Usado para referenciar um construtor.
+Exemplo: ArrayList::new cria uma nova instância de ArrayList.
+
+### 📖 Exemplo de Uso:
+
+```java
+List<String> words = Arrays.asList("Apple", "Banana", "Cherry");
+
+// Usando expressão lambda
+words.forEach(word -> System.out.println(word));
+
+// Usando method reference
+words.forEach(System.out::println);
+
+```
+
+
+Neste exemplo, a method reference System.out::println atua como uma forma abreviada da expressão lambda que imprime cada palavra na lista.
+
+As method references oferecem uma maneira elegante e concisa de lidar com expressões lambda, tornando o código Java mais limpo e compreensível.
