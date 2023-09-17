@@ -20,11 +20,24 @@
             <version>RELEASE</version>
             <scope>test</scope>
         </dependency>
+        <!-- slf4j API -->
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+            <version>1.7.32</version> <!-- Use a última versão disponível -->
+        </dependency>
+
+        <!-- Binding para slf4j com logback. Você pode usar outro binding se preferir. -->
+        <dependency>
+            <groupId>ch.qos.logback</groupId>
+            <artifactId>logback-classic</artifactId>
+            <version>1.2.6</version> <!-- Use a última versão disponível -->
+        </dependency>
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
-            <version>1.18.26</version>
-            <scope>compile</scope>
+            <version>1.18.28</version>
+            <scope>provided</scope>
         </dependency>
     </dependencies>
 
