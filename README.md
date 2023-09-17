@@ -65,3 +65,35 @@ public class Teste {
 }
 ```
 Os Default Methods são uma ferramenta poderosa, permitindo uma evolução mais fluida e flexível das interfaces em Java.
+
+
+## 🚀 Funções Lambda no Java 8
+As funções Lambda foram introduzidas no Java 8 e representam uma das maiores evoluções da linguagem. Uma função Lambda é uma função anônima (ou seja, sem nome) que pode ser usada para representar uma instância de interface funcional.
+
+1. 🌟 Vantagens das Funções Lambda:
+2. 🔥 Sintaxe Concisa: Reduz a verbosidade do código e foca na lógica principal.
+3. 💡 Flexibilidade: Pode ser usado principalmente em coleções e APIs que aceitam comportamento como um dos parâmetros.
+4. 🚀 Expressividade: Oferece uma maneira clara e concisa de representar um pedaço de funcionalidade.
+
+
+### 📝 Exemplo Básico
+Sem funções lambda:
+
+```java
+
+Collections.sort(words, new Comparator<String>() {
+public int compare(String s1, String s2) {
+return Integer.compare(s1.length(), s2.length());
+}
+});
+```
+
+```java
+Com funções lambda:
+
+java
+words.sort((s1, s2) -> Integer.compare(s1.length(), s2.length()));
+```
+No exemplo acima, a função lambda (s1, s2) -> Integer.compare(s1.length(), s2.length()) substitui o uso de uma classe anônima, tornando o código mais legível e conciso.
+
+As funções lambda, combinadas com os novos recursos da API de Streams do Java 8, proporcionam uma programação mais declarativa, permitindo aos desenvolvedores escrever código mais limpo e expressivo.
